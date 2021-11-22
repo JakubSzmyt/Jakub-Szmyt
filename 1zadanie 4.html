@@ -8,8 +8,11 @@
 </head>
 <body>
     <form action="" method="POST">
+        
         <input type="number" name="l1" placeholder="wpisz pierwszą liczbę" />
-        <input type="submit" value="sprawdz" />
+        <input type="number" name="p1" placeholder="wpisz początek przedziału" />
+        <input type="number" name="p2" placeholder="wpisz koniec przedziału" />
+        <input type="submit" value="Sprawdź" />
     </form>
     <div class="wynik"></div>
     <script>
@@ -18,11 +21,15 @@
         formularz.addEventListener('submit', (e)=>{
             e.preventDefault();
             const liczba1 = document.querySelector('input[name= "l1"]').value * 1;
-            if(liczba1 % 2 == 1){
-            diw.textContent = `liczba ${liczba1} jest nieparzysta`;
+            const przedzial1 = document.querySelector('input[name="p1"]').value * 1;
+            const przedzial2 = document.querySelector('input[name="p2"]').value * 1;
+            
+            if(liczba1 > przedzial1 && liczba1 < przedzial2 || liczba1 == przedzial1 || liczba1 == przedzial2){
+                diw.textContent = `liczba ${liczba1} znajduje się w przedziale < ${przedzial1} ; ${przedzial2} >`;
             }else{
-            diw.textContent = `liczba ${liczba1} jest parzysta`;
+                diw.textContent = `liczba ${liczba1} nie znajduje się w przedziale < ${przedzial1} ; ${przedzial2} >`;
             }
+
         });
     </script>
 </body>
