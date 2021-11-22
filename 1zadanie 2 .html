@@ -8,8 +8,9 @@
 </head>
 <body>
     <form action="" method="POST">
+        
         <input type="number" name="l1" placeholder="wpisz pierwszą liczbę" />
-        <input type="submit" value="sprawdz" />
+        <input type="submit" value="Sprawdź" />
     </form>
     <div class="wynik"></div>
     <script>
@@ -18,11 +19,13 @@
         formularz.addEventListener('submit', (e)=>{
             e.preventDefault();
             const liczba1 = document.querySelector('input[name= "l1"]').value * 1;
-            if(liczba1 % 2 == 1){
-            diw.textContent = `liczba ${liczba1} jest nieparzysta`;
+            
+            if (liczba1>5&&liczba1!=6&&liczba1!=12||liczba1==0){
+                diw.textContent = `podana liczba spełnia warunek`;
             }else{
-            diw.textContent = `liczba ${liczba1} jest parzysta`;
+                diw.textContent = `podana liczba nie spełnia warunku`;
             }
+
         });
     </script>
 </body>
