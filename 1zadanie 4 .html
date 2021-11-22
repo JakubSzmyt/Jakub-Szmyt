@@ -8,8 +8,9 @@
 </head>
 <body>
     <form action="" method="POST">
+        
         <input type="number" name="l1" placeholder="wpisz pierwszą liczbę" />
-        <input type="submit" value="sprawdz" />
+        <input type="submit" value="Sprawdź" />
     </form>
     <div class="wynik"></div>
     <script>
@@ -18,11 +19,25 @@
         formularz.addEventListener('submit', (e)=>{
             e.preventDefault();
             const liczba1 = document.querySelector('input[name= "l1"]').value * 1;
-            if(liczba1 % 2 == 1){
-            diw.textContent = `liczba ${liczba1} jest nieparzysta`;
-            }else{
-            diw.textContent = `liczba ${liczba1} jest parzysta`;
+            
+            if (liczba1==1){
+                diw.textContent = `jest poniedziałek`;
+            }else if (liczba1==2){
+                diw.textContent = `jest wtorek`;
+            }else if (liczba1==3){
+                diw.textContent = `jest środa`;
+            }else if (liczba1==4){
+                diw.textContent = `jest czwartek`;
+            }else if (liczba1==5){
+                diw.textContent = `jest piątek`;
+            }else if (liczba1==6){
+                diw.textContent = `jest sobota`;
+            }else if (liczba1==7){
+                diw.textContent = `jest niedziela`;
+            }else {
+                diw.textContent = `nie ma takiego dnia`;
             }
+
         });
     </script>
 </body>
