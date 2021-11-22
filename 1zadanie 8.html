@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        
+        <input type="number" name="l1" placeholder="wpisz pierwszą liczbę" />
+        <input type="submit" value="Sprawdź" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const liczba1 = document.querySelector('input[name= "l1"]').value * 1;
+            
+            switch (liczba1)
+            {
+                case 1:
+                    diw.textContent = `jest poniedziałek`;
+                    break;
+                case 2:
+                    diw.textContent = `jest wtorek`;
+                    break;
+                case 3:
+                diw.textContent = `jest środa`;
+                    break;
+                case 4:
+                diw.textContent = `jest czwartek`;
+                    break;
+                case 5:
+                diw.textContent = `jest piątek`;
+                    break;
+                case 6:
+                diw.textContent = `jest sobota`;
+                    break;
+                case 7:
+                diw.textContent = `jest niedziela`;
+                    break;
+                default:
+                diw.textContent = `nie ma takiego dnia`;
+                    break;
+            }
+
+        });
+    </script>
+</body>
+</html>

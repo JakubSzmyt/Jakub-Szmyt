@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        
+        <input type="number" name="l1" placeholder="wpisz a" />
+        <input type="number" name="l2" placeholder="wpisz b" />
+        <input type="number" name="l3" placeholder="wpisz c" />
+        <input type="submit" value="Sprawdź" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name= "l1"]').value * 1;
+            const b = document.querySelector('input[name= "l2"]').value * 1;
+            const c = document.querySelector('input[name= "l3"]').value * 1;
+            const delta = (b*b) - (4*a*c);
+            
+            if(delta > 0){
+
+                const x1 = ((-b)-Math.sqrt(delta))/(2*a);
+                const x2 = ((-b)+Math.sqrt(delta))/(2*a);
+                diw.textContent = `x1 wynosi ${x1} a x2 wynosi ${x2}`;
+
+            }else if(delta == 0) {
+
+                const x = (-b)/(2*a);
+                diw.textContent = `x wynosi ${x}`;
+
+            }else{
+
+                diw.textContent = `równanie nie ma rozwiązań`;
+
+            }
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="l1" placeholder="wpisz pierwszą liczbę" />
+        <input type="number" name="l2" placeholder="wpisz drugą liczbę" />
+        <input type="number" name="l3" placeholder="wpisz trzecią liczbę"/>>
+        <input type="submit" value="Oblicz" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const liczba1 = document.querySelector('input[name= "l1"]').value * 1;
+            const liczba2 = document.querySelector('input[name= "l2"]').value * 1;
+            const liczba3 = document.querySelector('input[name= "l3"]').value * 1;
+            if(liczba1>liczba2){  // liczba1 większa od liczby2
+                if(liczba1>liczba3){
+                    if(liczba2>liczba3){
+                        diw.textContent = `${liczba1}, ${liczba2}, ${liczba3}`;
+                    }else{
+                        diw.textContent = `${liczba1}, ${liczba3}, ${liczba2}`;
+                    }
+                }else{
+                    diw.textContent = `${liczba3}, ${liczba1}, ${liczba2}`;
+                }
+            }else if(liczba2>liczba3){
+                if(liczba1>liczba3){
+                    diw.textContent = `${liczba2}, ${liczba1}, ${liczba3}`;
+                }else{
+                    diw.textContent = `${liczba2}, ${liczba3}, ${liczba1}`;
+                }
+            }else{
+                diw.textContent = `${liczba3}, ${liczba2}, ${liczba1}`;
+            }
+        });
+    </script>
+</body>
+</html>

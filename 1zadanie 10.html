@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="text" name="figura" placeholder="rodzaj figury" />
+        <input type="number" name="l1" placeholder="wpisz a" />
+        <input type="number" name="l2" placeholder="wpisz b" />
+        <input type="submit" value="Oblicz" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            
+            const figura = document.querySelector('input[name= "figura"]').value.toUpperCase();
+            const a = document.querySelector('input[name= "l1"]').value * 1;
+            const b = document.querySelector('input[name= "l2"]').value * 1;
+
+            switch (figura){
+                case "T":
+
+                    const poleT = (a*b)/2;
+                    diw.textContent = `pole trójkąta wynosi ${poleT}`;
+                    break;
+
+                case "K":
+
+                    const poleK = a*a;
+                    diw.textContent = `pole kwadratu wynosi ${poleK}`;
+                    break;
+
+                case "P":
+
+                    const poleP = a*b;
+                    diw.textContent = `pole prostokąta wynosi ${poleP}`;
+                    break;
+
+                default:
+
+                    diw.textContent = `ERROR 404! figura not found`;
+                    break;
+
+            }
+
+        });
+    </script>
+</body>
+</html>

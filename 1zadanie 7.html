@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        
+        <input type="text" name="s1" placeholder="typ działania" />
+        <input type="number" name="l1" placeholder="wpisz pierwszą liczbę" />
+        <input type="number" name="l2" placeholder="wpisz drugą liczbę" />
+        <input type="submit" value="Sprawdź" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const liczba1 = document.querySelector('input[name= "l1"]').value * 1;
+            const liczba2 = document.querySelector('input[name= "l2"]').value * 1;
+            const switch1 = document.querySelector('input[name= "s1"]').value;
+            if(switch1 == '+'){
+                const wynik=liczba1+liczba2;
+                diw.textContent = `${liczba1} + ${liczba2} = ${wynik}`;
+            }else
+            if(switch1 == '-'){
+                const wynik=liczba1-liczba2;
+                diw.textContent = `${liczba1} - ${liczba2} = ${wynik}`;
+            }else
+            if(switch1 == '*'){
+                const wynik=liczba1*liczba2;
+                diw.textContent = `${liczba1} * ${liczba2} = ${wynik}`;
+            }else
+            if(switch1 == '/'){
+                const wynik=liczba1/liczba2;
+                diw.textContent = `${liczba1} / ${liczba2} = ${wynik}`;
+            }
+
+        });
+    </script>
+</body>
+</html>
+
