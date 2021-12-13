@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="l1" placeholder="wpisz liczbę" />
+        <input type="submit" value="Oblicz" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const l1 = document.querySelector('input[name= "l1"]').value * 1;
+            let a = 1;
+
+            for(let i = l1; i > 0; i--){
+                a = a * i;
+                
+            }
+            diw.textContent = `${a} `;
+        });
+    </script>
+</body>
+</html>

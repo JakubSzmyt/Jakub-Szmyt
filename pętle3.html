@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="l1" placeholder="wpisz pierwszą liczbę" />
+        <input type="number" name="l2" placeholder="wpisz drugą liczbę" />
+        <input type="submit" value="Oblicz" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            let a = document.querySelector('input[name= "l1"]').value * 1;
+            let b = document.querySelector('input[name= "l2"]').value * 1;
+            
+            while(a!=b){
+                if(a>b){
+                    a-=b;
+                }else{
+                    b-=a;
+                }
+            }
+            diw.textContent = `największy wspólny dzielnik wynosi ${a}`;
+        });
+    </script>
+</body>
+</html>
