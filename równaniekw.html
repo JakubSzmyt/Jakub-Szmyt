@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+    <title>Rozwiazania rownania kwadratowego  </title>
+
+<script type="text/javascript">
+        function rozwiazanie(){
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+                var delta;
+            var x1
+            var x2
+            var x0
+ 
+        if (a==0)      
+        {
+        alert("to nie jest równanie kwadratowe - a=0")
+        }
+        else {
+        if (a=="" || b=="" || c=="") {            
+        alert ("pozostawiłes puste pole")}
+        else {
+        
+        delta = Math.pow(b, 2) - (4*a*c)
+    if (delta<0){
+            alert ("delta ujemna -> brak rozwiazan")
+        }
+            
+            else if (delta ==0) {
+                x0 = -b/(2*a)
+          
+                alert ("delta rowna zero -> jedno rozwiazanie: " + x0)
+            }
+            else if (delta>0)
+        {
+                x1 = (-b - Math.sqrt(delta))/(2*a)
+                x2 =  (-b + Math.sqrt(delta))/(2*a)
+                alert ("Delta dodatnia -> dwa rozwiazania: x1 = "+ x1 + " x2 = " + x2) ;
+            }
+        } }
+}
+        function wyczysc(){
+        document.getElementById("a").value = 0;
+        document.getElementById("b").value = 0;
+        document.getElementById("c").value = 0;
+        }
+</script>
+
+    
+</head>
+<body>
+<h1> Rozwiazanie rownania kwadratowego</h1>
+<input type="text" value="0" size="3" id="a"/>
+<p>a^2 +</p>
+<input type="text" value="0" size="3" id="b"/>
+<p>x +</p>
+<input type="text" value="0" size="3" id="c"/>
+<p>= 0</p>
+ <br>
+ <input type="submit" value="rozwiaz" onclick="rozwiazanie()"/>
+ <input type="submit" value="wyczysc" onclick="wyczysc()"/>
+ 
+<p>
+================================
+</p>
+Jakub Szmyt
+</body>
+</html>

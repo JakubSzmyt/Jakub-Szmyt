@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="liczba1" placeholder="wpisz pierwszą liczbe" />
+        <input type="number" name="liczba2" placeholder="wpisz drugą liczbe" />
+        <input type="text" name="dzialanie" placeholder="wybierz dzialanie" />
+     <input type="submit" value="Oblicz" />
+ </form>
+ <div class="wynik"></div>
+<script>
+    
+    const formularz = document.querySelector('form');
+    
+    const skutek = document.querySelector('div.wynik');
+    
+    formularz.addEventListener('submit', (e)=>{
+       
+        e.preventDefault();
+       
+        const l1 = document.querySelector('input[name="liczba1"]').value * 1;
+        const l2 = document.querySelector('input[name="liczba2"]').value * 1;
+        
+        if (dzialanie = '+'){
+        const suma = l1 + l2;
+       
+        skutek.textContent = 'suma wynosi:' + suma;
+        }
+
+        if (dzialanie = '-'){
+        const suma = l1 - l2;
+       
+        skutek.textContent = 'suma wynosi:' + suma;
+        }
+        if (dzialanie = '*'){
+        const suma = l1 * l2;
+       
+        skutek.textContent = 'suma wynosi:' + suma;
+        }
+        if (dzialanie = '/'){
+        const suma = l1 / l2;
+       
+        skutek.textContent = 'suma wynosi:' + suma;
+        }
+
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h1> Liczenie równania kwadratowego</h1>
+    Podaj Liczbę A , B i C 
+
+    <div class="kontener">
+        <div class="tak">
+        </div>
+        <div class="pokaż" onclick="$(".a").show();$("#c").hide()"> </div>
+        <div class="info" onclick="$(".a,#c").show();"></div>
+        <input type="text" id="a" class="a b">
+        <input type="text" id="b" class="a b">
+        <input type="text" id="c">
+        <div class="btn" onclick="equationType()">=</div>
+        </div>
+<script>
+function  liczby {
+    var a=$("#a").val();
+    var b=$("#b").val();
+    var c=$("#c").val();
+
+    var D=b*b - 4 * a * c;
+    var baza = 2 * a;
+
+    var sD=Math.sqrt(D);
+if (D < 0) {
+alert("Delta mniejsza od 0")
+}
+    else if (D === 0){
+    var dx=(b*(-1)) / (2 * a);
+    alert(+dx)
+     }
+        else{
+        var x1=-b+sD / baza;
+        var x2=-b-sD / baza;
+        alert("X1: "+x1+"  X2: "+x2)
+        }
+
+}
+</script>
+<p>--------------------------------------------------------</p>
+Jakub Szmyt 3H
+</body>
+</html>
